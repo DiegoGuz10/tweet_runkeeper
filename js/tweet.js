@@ -50,63 +50,12 @@ class Tweet {
         else if (lowerCaseText.includes(" run ")) {
             return "run";
         }
-        // else if (lowerCaseText.includes(" hike ")) {
-        //     return "hike";
-        // }
-        // else if (lowerCaseText.includes(" yoga ")) {
-        //     return "yoga";
-        // }
         else if (lowerCaseText.includes(" walk ")) {
             return "walk";
         }
         else if (lowerCaseText.includes(" bike ")) {
             return "bike";
         }
-        // else if (lowerCaseText.includes(" row ")) {
-        //     return "row";
-        // }
-        // else if (lowerCaseText.includes(" ski run ")) {
-        //     return "ski run";
-        // }
-        // else if (lowerCaseText.includes(" mysports freestyle ")) {
-        //     return "mysports freestyle";
-        // }
-        // else if (lowerCaseText.includes(" mysports gym ")) {
-        //     return "mysports gym";
-        // }
-        // else if (lowerCaseText.includes(" workout ")) {
-        //     return "workout";
-        // }
-        // else if (lowerCaseText.includes(" swim ")) {
-        //     return "swim";
-        // }
-        // else if (lowerCaseText.includes(" meditation ")) {
-        //     return "meditation";
-        // }
-        // else if (lowerCaseText.includes(" activity ")) {
-        //     return "activity";
-        // }
-        // else if (lowerCaseText.includes(" chair ride ")) {
-        //     return "chair ride";
-        // }
-        // else if (lowerCaseText.includes(" pilates session ")) {
-        //     return "pilates session";
-        // }
-        // else if (lowerCaseText.includes(" skate ")) {
-        //     return "skate";
-        // }
-        // else if (lowerCaseText.includes(" snowboard ")) {
-        //     return "snowboard";
-        // }
-        // else if (lowerCaseText.includes(" boxing / mma ")) {
-        //     return "boxing/mma session";
-        // }
-        // else if (lowerCaseText.includes(" sports ")) {
-        //     return "sports session";
-        // }
-        // else if (lowerCaseText.includes(" dance ")) {
-        //     return "dance";
-        // }
         return "";
     }
     get allactivityType() {
