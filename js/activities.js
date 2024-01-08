@@ -1,26 +1,51 @@
 function numToDay(num) {
     //takes a number 0-6 and converts it to a 3-character day code
-	switch(num) {
+	// switch(num) {
+	// 	case 0:
+	// 		return "Sun";
+	// 		break;
+	// 	case 1:
+	// 		return "Mon";
+	// 		break;
+	// 	case 2:
+	// 		return "Tue";
+	// 		break;
+	// 	case 3:
+	// 		return "Wed";
+	// 		break;
+	// 	case 4:
+	// 		return "Thu";
+	// 		break;
+	// 	case 5:
+	// 		return "Fri";
+	// 		break;
+	// 	case 6:
+	// 		return "Sat";
+	// 		break;
+	// 	default:
+	// 		return "ERROR";
+	// }
+    switch(num) {
 		case 0:
-			return "Sun";
+			return "Sunday";
 			break;
 		case 1:
-			return "Mon";
+			return "Monday";
 			break;
 		case 2:
-			return "Tue";
+			return "Tuesday";
 			break;
 		case 3:
-			return "Wed";
+			return "Wednesday";
 			break;
 		case 4:
-			return "Thu";
+			return "Thursday";
 			break;
 		case 5:
-			return "Fri";
+			return "Friday";
 			break;
 		case 6:
-			return "Sat";
+			return "Saturday";
 			break;
 		default:
 			return "ERROR";
@@ -80,7 +105,7 @@ function parseTweets(runkeeper_tweets) {
     var helperActivityArray = [];
     tweet_array.forEach(function(tweet) {
         var key = tweet.activityType;
-        if (!helperActivityArray.includes(key)) {
+        if ((!helperActivityArray.includes(key)) && (key != "") && (key != "unknown")) {
             helperActivityArray.push(key);
             activityTypeArray.push({
                 activity: key,
@@ -198,17 +223,21 @@ function parseTweets(runkeeper_tweets) {
       "description": "A graph of the number of Tweets containing each type of activity.",
       "data": {"values": activityTypeArray},
       "mark": "point",
+      "width": 400,
+      "height": 250,
       "encoding": {
             "x": {
-                "field":"activity",
-                "type": "nominal"
+                "field": "activity",
+                "type": "nominal",
+                "title": "Type of Activity",
             },
             "y": {
                 "field": "amount",
                 "type": "quantitative",
 				"scale": {
-					"domain": [0, 6000]
-				}
+					"domain": [0, 5500]
+				},
+                "title": "Number of Tweets"
             }
         }
     };
@@ -220,18 +249,24 @@ function parseTweets(runkeeper_tweets) {
         "description": "A graph of the distances covered each day by the top three activities.",
         "data": {"values": distByDayArray},
         "mark": "point",
+        "width": 400,
+        "height": 250,
         "encoding": {
             "x": {
                 "field": "time",
                 "type": "nominal",
-				"sort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+                "sort": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                // "sort": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+				// "sort": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "title": "Day"
             },
             "y": {
                 "field": "distance",
                 "type": "quantitative",
 				"scale": {
-					"domain": [0, 200]
-				}
+					"domain": [0, 300]
+				},
+                "title": "Distance (mi)"
             },
             "color": {
                 "field": "activity",
@@ -247,18 +282,23 @@ function parseTweets(runkeeper_tweets) {
         "description": "A graph of the average distances covered each day for the top three activities.",
         "data": {"values": averagedDistsArray},
         "mark": "point",
+        "width": 400,
+        "height": 250,
         "encoding": {
             "x": {
                 "field": "time",
                 "type": "ordinal",
-				"sort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+                "sort": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+				//"sort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                "title": "Day"
             },
             "y": {
                 "field": "average_distance",
                 "type": "quantitative",
 				"scale": {
 					"domain": [0, 15]
-				}
+				},
+                "title": "Average Distance (mi)"
             },
             "color": {
                 "field": "activity",
@@ -295,11 +335,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		if ($("#distanceVisAggregated").css("display") == "none") {
 			$("#distanceVis").css("display", "none");
 			$("#distanceVisAggregated").css("display", "inline-block");
-			$("#aggregate").html("Show all activities");
+			$("#aggregate").html("Show All Activities");
 		} else {
 			$("#distanceVisAggregated").css("display", "none");
 			$("#distanceVis").css("display", "inline-block");
-			$("#aggregate").html("Show means");
+			$("#aggregate").html("Show Means");
 		}
 	})
 

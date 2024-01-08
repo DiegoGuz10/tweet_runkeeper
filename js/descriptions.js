@@ -16,7 +16,7 @@ function parseTweets(runkeeper_tweets) {
 	tweet_array.forEach(element => {
 		if(element.written === true) {
 			allTweetsArray.push({
-				tweet_activity: element.activityType,
+				tweet_activity: element.allactivityType,
 				tweet_text: element.textwithLink,
 			});
 		}
