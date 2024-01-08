@@ -13,7 +13,7 @@
   <!--Stylesheets-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <!--Load local stylesheet-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/activitiesStyle.css">
   <!--Load local runkeeper_tweets file, which will load all of the tweets into the variable RUNKEEPER_TWEETS-->
   <script type="text/javascript" src="js/get_saved_tweets.js"></script>
   <!--Load local tweet.js file, which was generated from TypeScript-->
@@ -28,36 +28,36 @@
   <title>One week of #RunKeeper Tweets</title>
 </head>
 <body class="container">
-  <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item navbar-brand">
+  <nav class="navbar1 navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item-1">
         <span class="navbar-brand">
-          One week of #RunKeeper Tweets
+          One Week of #RunKeeper Tweets
         </span>
       </li>
-      <li class="nav-item">
+      <li class="nav-item-2">
         <a href="index.html" class="nav-link">
-          About the data
+          About the Data
         </a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item-3">
         <a href="activities.html" class="nav-link">
-          A wide range of activities
+          Range of Activities
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item-4">
         <a href="descriptions.html" class="nav-link">
-          What people are saying
+          What People are Saying?
         </a>
       </li>
     </ul>
   </nav>
   <main>
-    <h1>A wide range of activities</h1>
-    <p>That week, people logged <span id="numberActivities">???</span> different types of activities with Runkeeper. People logged the most <span id="firstMost">???</span>, <span id="secondMost">???</span>, and <span id="thirdMost">???</span> activities.</p>
+    <h1>A Wide Range of Activities</h1>
+    <p id=activityVisP>During that week, people logged over 10 different types of activities with Runkeeper. The 3 most popular activities are running, walking, and biking.
     <div id="activityVis"></div>
-    <p>Of these three activities, people tended to <span id="longestActivityType">???</span> the longest distance and <span id="shortestActivityType">???</span> the shortest. People tended to do their longest activities on <span id="weekdayOrWeekendLonger">???</span>.</p>
-    <button id="aggregate" class="btn btn-primary">Show means</button>
+    <p id=distanceVisP>Of these 3 activities, people tended to <span id="longestActivityType">???</span> the longest distance and <span id="shortestActivityType">???</span> the shortest. People also tended to do their longest activities on <span id="weekdayOrWeekendLonger">???</span>.</p>
+    <div id="aggregateDiv"><button id="aggregate" class="btn btn-primary">Show Means</button></div>
     <div id="distanceVis"></div>
     <div id="distanceVisAggregated"></div>
   </main>
